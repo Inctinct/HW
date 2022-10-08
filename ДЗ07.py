@@ -1,4 +1,4 @@
-
+# Запрещенные слова
 
 file=input('Set a name of file: ')
 words=[]
@@ -30,7 +30,8 @@ with open(file,'r')as f:
                filtr=text[0:i]+text[i].upper()+text[i+1:]
                text=filtr
        print(text)
-
+# В текстовый файл построчно записаны фамилия и имя учащихся класса и его оценка за контрольную.
+# Вывести на экран всех учащихся, чья оценка меньше 3 баллов
 
 with open('class.txt','r',encoding='utf-8') as f:
     for i in f:
@@ -54,7 +55,8 @@ with open('цифры.txt','r') as f:
             value+=int(i)
     print(value)
 
-
+# Зашифруйте данный текстовый файл шифром Цезаря, при этом символы первой строки файла должны
+# циклически сдвигаться на 1, второй строки — на 2, третьей строки — на три и т.д.
 
 Alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 arr=[]
@@ -72,7 +74,7 @@ with open('Цезарь.txt','r') as f:
                 arr.append(j)
     print(''.join(arr))
 
-
+# В Государственную Думу Федерального Собрания Российской Федерации выборы производятся по партийным спискам.
 arr=[]
 partii=0
 count=0
@@ -88,6 +90,7 @@ with open('ГосДума.txt','r') as f:
         if (100/count)*(arr.count(arr[j])-1) >7:
             print(arr[j])
 
+# Z: Гистограмма            
 symbols=[]
 arr=[]
 matrix=[]
@@ -120,7 +123,7 @@ with open('Cipher.txt','r') as f:
         print()
     print(''.join(symb))
 
-
+# Q: Выборы Государственной Думы
 arr=[]
 new_arr=[]
 summa=0
