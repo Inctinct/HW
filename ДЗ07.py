@@ -134,31 +134,25 @@ with open('gosDuma.txt','r') as f:
         arr+=(i.split(' '))
 
     new_arr=arr[2::3]
-
-    for j in range(len(new_arr)-1):
-        if j !=len(new_arr):
-            new_arr[j]=new_arr[j][:-1]
-
+    for j in range(len(new_arr)):
+            new_arr[j]=int(new_arr[j])
+    izb_golosa=new_arr
     for i in new_arr:
         summa+=int(i)
     first_izb=summa/450
     for i in range(len(new_arr)):
         ost.append(int(new_arr[i])/first_izb-int(new_arr[i])//first_izb)
-
         new_arr[i]=int(new_arr[i])//first_izb
     for i in new_arr:
         golosa+=int(i)
-
-    while golosa<450:
-        max_ost=ost[0]
-        number=0
-        for i in ost:
-            if max_ost<i:
-                max_ost=i
-        number+=ost.index(max_ost)
-        new_arr[number]+=1
-        golosa+=1
-
+    while golosa < 450:
+        i = 0
+        for j in range(1, len(ost)):
+            if ost[j] > ost[i] or (ost[j] == ost[i] and izb_golosa[j] > izb_golosa[i]):
+                i = j
+        new_arr[i] += 1
+        golosa += 1
+        ost[i] = 0
     g=0
     k=1
     for i in range(len(new_arr)):
@@ -166,4 +160,3 @@ with open('gosDuma.txt','r') as f:
         print(f'{arr[g]} {arr[k]} {new_arr[i]}')
         g+=3
         k+=3
-
