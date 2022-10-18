@@ -1,4 +1,4 @@
-"""
+
 class Themes:
     def __init__(self,topics):
         self.topics=topics
@@ -137,5 +137,5 @@ class TArray:
             self.arr[i]=self.arr[i]*number
         return self.arr
 
-"""
+
 
